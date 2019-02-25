@@ -1,0 +1,48 @@
+.solutions
+	&__wrapper
+		background-color: $white
+		text-align: center
+		// padding-bottom: 300px
+	&__btn
+		+flex-center
+		margin-top: 30px
+
+.solutions-cta
+	position: relative
+	padding: 30px
+	&__img
+		display: block
+	&__arrow
+		position: absolute
+		transform-origin: center
+		font-size: 0
+		opacity: 0
+		transition: transform 0.4s, opacity 0.4s
+		.is-animate &
+			opacity: 1
+		&:nth-child(1)
+			top: 0
+			left: 0
+			transform: translate(-40px, -40px) rotate(45deg)
+			.is-animate &
+				transform: translate(0, 0) rotate(45deg)
+		&:nth-child(2)
+			top: 0
+			right: 0
+			transform: translate(40px, -40px) rotate(135deg)
+			.is-animate &
+				transform: translate(0, 0) rotate(135deg)
+		&:nth-child(3)
+			bottom: 0
+			right: 0
+			transform: translate(40px, 40px) rotate(225deg)
+			.is-animate &
+				transform: translate(0, 0) rotate(225deg)
+		&:nth-child(4)
+			bottom: 0
+			left: 0
+			transform: translate(-40px, 40px) rotate(-45deg)
+			.is-animate &
+				transform: translate(0, 0) rotate(-45deg)
+		.icon
+			font-size: 30px

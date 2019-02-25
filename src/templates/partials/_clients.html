@@ -1,0 +1,21 @@
+<div class="clients">
+	<div class="clients__inner inner">
+		<div class="clients__wrapper wrapper">
+			<h3 class="clients__title title">Tokenization</h3>
+			<div class="text-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam deserunt vero culpa dignissimos magni hic cupiditate necessitatibus nulla autem sequi maxime ea quisquam praesentium alias similique at voluptatem, odit voluptate.</div>
+			<div class="clients__logos">
+				{% for item in [
+					'apple_pay.png',
+					'samsung_pay.png',
+					'android_pay.png',
+					'rosan_pay.png',
+					'garmin_pay.png'
+				] %}
+					<div class="clients__logo">
+						<img src="./img/{{ item }}" alt="">
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>

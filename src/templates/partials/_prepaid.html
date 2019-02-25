@@ -5,20 +5,20 @@
         {% for item in[
           {
             title: 'card_1.png',
-            rellax: 4
+            rellax: 2
           }, {
             title: 'card_2.png',
-            rellax: 3
+            rellax: 2
           }, {
             title: 'card_3.png',
             rellax: 2
           }, {
             title: 'card_4.png',
-            rellax: 1
+            rellax: 2
           }
         ] %}
           <div class="parallax-card">
-            <img src="./img/{{ item.title }}" alt="" class="rellax" data-rellax-speed="{{ item.rellax }}"/>
+            <img src="./img/{{ item.title }}" alt="" class="rellax rellax-{{ loop.index }}" data-rellax-speed="{{ item.rellax }}"/>
           </div>
         {% endfor %}
       </div>
