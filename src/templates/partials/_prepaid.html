@@ -1,0 +1,72 @@
+<div class="prepaid">
+  <div class="prepaid__inner inner">
+    <div class="prepaid__wrapper">
+      <div class="prepaid__cards">
+        {% for item in[
+          {
+            title: 'card_1.png',
+            rellax: 4
+          }, {
+            title: 'card_2.png',
+            rellax: 3
+          }, {
+            title: 'card_3.png',
+            rellax: 2
+          }, {
+            title: 'card_4.png',
+            rellax: 1
+          }
+        ] %}
+          <div class="parallax-card">
+            <img src="./img/{{ item.title }}" alt="" class="rellax" data-rellax-speed="{{ item.rellax }}"/>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="prepaid__title title-lg">Prepaid cards</div>
+
+      <div class="prepaid__tabs" data-tabs="prepaid-tabs">
+        <div class="tabs tabs_bg">
+          <div class="tabs__out">
+            <div class="tabs__current" data-tabs-current="data-tabs-current">
+              <span></span>
+            </div>
+            <ul class="tabs__list">
+              {% for item in[ 
+              { id: 'multiCards', text: 'Multi-currency cards' }, 
+              { id: 'virtualCards', text: 'Virtual cards' }, 
+              { id: 'metalCards', text: 'Metal NFC cards' },
+              { id: 'uniqueDesignCards', text: 'Cards with unique designs' } 
+              ] %}
+                <li class="tabs__item" data-tabs-control="{{ item.id }}">
+                  <span>{{ item.text }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="tabs__wrapper" data-tabs-wrapper="prepaid-tabs-wrapper">
+            <div class="tabs__container" data-tabs-container="multiCards">
+              <p>
+                Allow your clients to choose what currency to spend from EUR, GBP or USD Virtual cards can be issued instantly, that provides your clients additional flexibility With our high quality metal cards with NFC capability your program could show that you value your clients. We have a possibility to create, produce and approve unique and outstanding card designs specially for your program
+              </p>
+            </div>
+            <div class="tabs__container" data-tabs-container="virtualCards">
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur illum, sed repellendus laboriosam repellat nostrum, aliquam itaque imi atque provident iste quam facere.
+              </p>
+            </div>
+            <div class="tabs__container" data-tabs-container="metalCards">
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam debitis sit nam, labore rem asperiores voluptate, deleniti quod quisquam eatae aspernatur fugiat.
+              </p>
+            </div>
+            <div class="tabs__container" data-tabs-container="uniqueDesignCards">
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam debitis sit nam, labore rem asperiores voluptate, deleniti quod quisquam eatae aspernatur fugiat.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

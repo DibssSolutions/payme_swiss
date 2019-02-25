@@ -1,7 +1,25 @@
 //FONTS
 =fontpath($name, $name1, $file)
-	src: local($name), local($name1), url("../fonts/" + $file + ".woff2") format("woff2"), url("../fonts/" + $file + ".woff") format("woff")
+  src: local($name), local($name1), url("../fonts/" + $file + ".woff2") format("woff2"), url("../fonts/" + $file + ".woff") format("woff")
 =fontdefault($style, $weight, $name)
-	font-family: $name
-	font-style: $style
-	font-weight: $weight
+  font-family: $name
+  font-style: $style
+  font-weight: $weight
+
+$montserrat: 'Montserrat'
+
+@font-face
+  +fontdefault(normal, 500, $montserrat)
+  +fontpath('Montserrat-Medium', 'Montserrat-Medium', Montserrat-Medium)
+
+@font-face
+  +fontdefault(italic, 500, $montserrat)
+  +fontpath('Montserrat-MediumItalic', 'Montserrat-MediumItalic', Montserrat-MediumItalic)
+
+@font-face
+  +fontdefault(normal, 600, $montserrat)
+  +fontpath('Montserrat-SemiBold', 'Montserrat-SemiBold', Montserrat-SemiBold)
+
+@font-face
+  +fontdefault(italic, 600, $montserrat)
+  +fontpath('Montserrat-SemiBold', 'Montserrat-SemiBoldItalic', Montserrat-SemiBoldItalic)

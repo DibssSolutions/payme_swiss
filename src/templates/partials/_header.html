@@ -1,1 +1,35 @@
-<p>Hello from partials/_header.html</p>
+<header class="header">
+  <div class="header__inner inner">
+    <div class="header__wrapper">
+      <div class="header__logo">
+        <a href="/" class="logo">
+          <img src="./img/logo.svg" alt="logo"/>
+        </a>
+      </div>
+      <div class="header__nav">
+        <nav class="main-nav">
+          <ul class="main-nav__list">
+            {% for item in[
+              {
+                text: 'Products',
+                link: 'products'
+              }, {
+                text: 'Services',
+                link: 'services'
+              }, {
+                text: 'About us',
+                link: 'about'
+              }
+            ] %}
+              <li class="main-nav__item">
+                <a href="{{ item.link }}" class="main-nav__link">{{
+                item.text
+              }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
