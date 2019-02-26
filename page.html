@@ -35,17 +35,17 @@
               <nav class="main-nav">
                 <ul class="main-nav__list">
                   <li class="main-nav__item">
-                    <a href="products" class="main-nav__link">
+                    <a href="#products" class="main-nav__link js-menu-link">
                       <span>Products</span>
                     </a>
                   </li>
                   <li class="main-nav__item">
-                    <a href="services" class="main-nav__link">
+                    <a href="#services" class="main-nav__link js-menu-link">
                       <span>Services</span>
                     </a>
                   </li>
                   <li class="main-nav__item">
-                    <a href="about" class="main-nav__link">
+                    <a href="#about" class="main-nav__link js-menu-link">
                       <span>About us</span>
                     </a>
                   </li>
@@ -71,7 +71,7 @@
           </div>
         </div>
       </div>
-      <div class="wearables">
+      <div class="wearables js-navigation-section" id="products">
         <div class="wearables__inner inner">
           <div class="wearables__wrapper" data-tabs="data-tabs">
             <div class="wearables__texts" data-tabs-wrapper="data-tabs-wrapper">
@@ -270,7 +270,7 @@
           </div>
         </div>
       </div>
-      <div class="features">
+      <div class="features js-navigation-section" id="services">
         <div class="features__inner inner">
           <div class="features__wrapper">
             <div class="features__item">
@@ -315,6 +315,19 @@
                 <div class="feature__text">With our experience with management of affluent, HNWI and UHNWI customers and team of leading compliance consultants, we are ready to provide you continuous monitoring of your card program.</div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="about js-navigation-section" id='about'>
+        <div class="about__inner inner">
+          <div class="about__text-wrapper">
+            <div class="text-card">
+              <div class="text-card__title title">About us</div>
+              <div class="text-card__content">Payme Swiss AG is a company with a solid track in the card and financial industry. It was founded by experts with a bank card background from leading card companies in the world and by financial experts with a long track in FinTech and wealth management industries. Payme Swiss has possibility to provide unique card program experience on the EEA markets with a special focus on wearable payments, tokenization and FinTech</div>
+            </div>
+          </div>
+          <div class="about__image-wrapper">
+            <div class="about__image" style='background-image: url(./img/about_new_bg.png'></div>
           </div>
         </div>
       </div>
@@ -364,7 +377,7 @@
           </div>
           <div class="footer_details">
             <ul class="details">
-              <li class="details__item"><a href="#" class="details__link">Imprint</a></li>
+              <li class="details__item"><a href="#" class="details__link" data-modal-control="inprint-modal">Imprint</a></li>
               <li class="details__item"><a href="#" class="details__link">Privacy Policy</a></li>
             </ul>
           </div>
@@ -372,6 +385,24 @@
             <a href="#" class="mastercard">
               <img src="./img/mastercard.png" alt="mastercard">
             </a>
+          </div>
+        </div>
+      </div>
+      <div class="cookies js-cookies">
+        <div class="cookies__descr"> We are proud to be the first program manager provide unique passive payment wearables (without battery) certified by Mastercard for your program: </div>
+        <div class="cookies__btn">
+          <button class="btn" type='button'>Accept</button>
+        </div>
+      </div>
+      <div class="modal" data-modal="inprint-modal">
+        <div class="modal__container" data-modal-container>
+          <div class="modal__inner">
+            <button class="modal__close" data-modal-close>
+              <svg class="icon icon-close">
+                <use xlink:href="img/sprite.svg#icon-close"></use>
+              </svg>
+            </button>
+            <div class="modal__text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet </div>
           </div>
         </div>
       </div>
