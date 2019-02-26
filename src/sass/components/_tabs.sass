@@ -1,5 +1,5 @@
 [data-tabs]
-	overflow: hidden
+	// overflow: hidden
 	[data-tabs-control]
 		cursor: pointer
 
@@ -33,37 +33,61 @@
     .tabs_bg &
       flex-direction: row
       justify-content: center
-    +sm 
+    +sm
       flex-direction: row
-      justify-content: space-around
+      justify-content: flex-start
+      margin: 0 -10px
+      flex-wrap: nowrap
+      overflow: auto
       .tabs_bg &
         flex-direction: column
+        align-items: center
   &__item
     display: block
     color: $violet
-    +bigText
+    font-size: 0
+    +sm 
+      padding: 0 10px
+      flex-grow: 1
+      opacity: 0.4
     .tabs_bg &
       color: $mainTextColor
       margin: 0 6px
+      +sm 
+        opacity: 1
+        max-width: 240px
     &:not(:last-child)
       margin-bottom: 18px
       .tabs_bg &
         margin-bottom: 0
-        +sm 
-          margin-bottom: 10px
-    +hover
-      span:after
-        transform: translateX(0)
+        +sm
+          margin-bottom: 7px
+    // +hover
+    //   span:after
+    //     transform: translateX(0)
     &.is-active
+      +sm 
+        opacity: 1
       span:after
         transform: translateX(0)
       .tabs_bg &
         background-image: $grad
         color: $white
-    span 
+        +hover 
+          opacity: 0.8
+    span
+      +bigText
       display: inline-block
       position: relative
       overflow: hidden
+      padding-bottom: 5px
+      .tabs_bg &
+        padding-bottom: 0
+      +sm 
+        white-space: nowrap
+      +hover
+        &:after
+          transform: translateX(0)
       &:after
         content: ''
         position: absolute

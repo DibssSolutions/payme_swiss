@@ -14,9 +14,17 @@
   <body>
     <!-- BEGIN content -->
     <div class="out">
-      <header class="header">
+      <header class="header js-header">
         <div class="header__inner inner">
           <div class="header__wrapper">
+            <div class="header__burger">
+              <div class="burger js-mob-toggler">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
             <div class="header__logo">
               <a href="/" class="logo">
                 <img class="logo__image" src="./img/logo.svg" alt="logo" />
@@ -27,13 +35,19 @@
               <nav class="main-nav">
                 <ul class="main-nav__list">
                   <li class="main-nav__item">
-                    <a href="products" class="main-nav__link">Products</a>
+                    <a href="products" class="main-nav__link">
+                      <span>Products</span>
+                    </a>
                   </li>
                   <li class="main-nav__item">
-                    <a href="services" class="main-nav__link">Services</a>
+                    <a href="services" class="main-nav__link">
+                      <span>Services</span>
+                    </a>
                   </li>
                   <li class="main-nav__item">
-                    <a href="about" class="main-nav__link">About us</a>
+                    <a href="about" class="main-nav__link">
+                      <span>About us</span>
+                    </a>
                   </li>
                 </ul>
               </nav>
@@ -67,11 +81,11 @@
               </div>
               <div class="wearables__text" data-tabs-container="keyFobs">
                 <h3 class="title">Wearables_2</h3>
-                <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur illum, sed repellendus laboriosam repellat nostrum, aliquam itaque animi atque provident iste quam facere. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima vel iusto dicta aliquam voluptatem eum. Pariatur voluptatum eum esse id minus minima tenetur.
+                <p> We are proud to be the first program manager provide unique passive payment wearables (without battery) certified by Mastercard for your program:
               </div>
               <div class="wearables__text" data-tabs-container="other">
                 <h3 class="title">Wearables_3</h3>
-                <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam debitis sit nam, labore rem asperiores voluptate, deleniti quod quisquam beatae aspernatur fugiat. </p>
+                <p> We are proud to be the first program manager provide unique passive payment wearables (without battery) certified by Mastercard for your program: </p>
               </div>
             </div>
             <div class="wearables__images" data-tabs-wrapper="data-tabs-wrapper">
@@ -102,17 +116,23 @@
             <div class="wearables__info-wrapper">
               <div class="wearables__info">
                 <span>No battery needed</span>
-                <svg class="icon icon-battery">
-                  <use xlink:href="img/sprite.svg#icon-battery"></use>
-                </svg>
+                <span class="battery">
+                  <span class="battery__line"></span>
+                  <svg class="icon icon-battery_full">
+                    <use xlink:href="img/sprite.svg#icon-battery_full"></use>
+                  </svg>
+                  <!-- 
+<svg class="icon icon-battery"><use xlink:href="img/sprite.svg#icon-battery"></use></svg>
+ -->
+                </span>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="prepaid">
+      <div class="prepaid" data-tabs="prepaid-tabs">
         <div class="prepaid__inner inner">
-          <div class="prepaid__wrapper">
+          <div class="prepaid__wrapper" data-scroll-trigger>
             <div class="prepaid__cards">
               <div class="parallax-card">
                 <img src="./img/card_1.png" alt="" class="rellax rellax-1" data-rellax-speed="2" />
@@ -128,7 +148,7 @@
               </div>
             </div>
             <div class="prepaid__title title-lg">Prepaid cards</div>
-            <div class="prepaid__tabs" data-tabs="prepaid-tabs">
+            <div class="prepaid__tabs">
               <div class="tabs tabs_bg">
                 <div class="tabs__out">
                   <div class="tabs__current" data-tabs-current="data-tabs-current">
@@ -150,16 +170,16 @@
                   </ul>
                 </div>
                 <div class="tabs__wrapper" data-tabs-wrapper="prepaid-tabs-wrapper">
-                  <div class="tabs__container" data-tabs-container="multiCards">
+                  <div class="tabs__container js-no-init-active" data-tabs-container="multiCards">
                     <p> Allow your clients to choose what currency to spend from EUR, GBP or USD Virtual cards can be issued instantly, that provides your clients additional flexibility With our high quality metal cards with NFC capability your program could show that you value your clients. We have a possibility to create, produce and approve unique and outstanding card designs specially for your program </p>
                   </div>
-                  <div class="tabs__container" data-tabs-container="virtualCards">
+                  <div class="tabs__container js-no-init-active" data-tabs-container="virtualCards">
                     <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur illum, sed repellendus laboriosam repellat nostrum, aliquam itaque imi atque provident iste quam facere. </p>
                   </div>
-                  <div class="tabs__container" data-tabs-container="metalCards">
+                  <div class="tabs__container js-no-init-active" data-tabs-container="metalCards">
                     <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam debitis sit nam, labore rem asperiores voluptate, deleniti quod quisquam eatae aspernatur fugiat. </p>
                   </div>
-                  <div class="tabs__container" data-tabs-container="uniqueDesignCards">
+                  <div class="tabs__container js-no-init-active" data-tabs-container="uniqueDesignCards">
                     <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam debitis sit nam, labore rem asperiores voluptate, deleniti quod quisquam eatae aspernatur fugiat. </p>
                   </div>
                 </div>
@@ -197,8 +217,8 @@
           <div class="solutions__wrapper">
             <h3 class="solutions__title title"> Turnkey solutions </h3>
             <div class="text-block"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore deleniti perferendis, alias doloremque maxime amet soluta dolore, facere totam repudiandae veritatis corrupti accusantium asperiores repellat eos, nostrum nihil delectus! Perspiciatis! </div>
-            <div class="solutions__btn">
-              <div class="solutions-cta js-solutions-btn">
+            <div class="solutions__btn" data-scroll-trigger>
+              <div class="solutions-cta">
                 <span class="solutions-cta__arrow">
                   <svg class="icon icon-arrow">
                     <use xlink:href="img/sprite.svg#icon-arrow"></use>
@@ -230,20 +250,20 @@
           <div class="clients__wrapper wrapper">
             <h3 class="clients__title title">Tokenization</h3>
             <div class="text-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam deserunt vero culpa dignissimos magni hic cupiditate necessitatibus nulla autem sequi maxime ea quisquam praesentium alias similique at voluptatem, odit voluptate.</div>
-            <div class="clients__logos">
-              <div class="clients__logo">
+            <div class="clients__logos" data-scroll-trigger data-anim-group data-delay-anim='0.1'>
+              <div class="clients__logo" data-anim='from-bottom'>
                 <img src="./img/apple_pay.png" alt="">
               </div>
-              <div class="clients__logo">
+              <div class="clients__logo" data-anim='from-bottom'>
                 <img src="./img/samsung_pay.png" alt="">
               </div>
-              <div class="clients__logo">
+              <div class="clients__logo" data-anim='from-bottom'>
                 <img src="./img/android_pay.png" alt="">
               </div>
-              <div class="clients__logo">
+              <div class="clients__logo" data-anim='from-bottom'>
                 <img src="./img/rosan_pay.png" alt="">
               </div>
-              <div class="clients__logo">
+              <div class="clients__logo" data-anim='from-bottom'>
                 <img src="./img/garmin_pay.png" alt="">
               </div>
             </div>
@@ -298,17 +318,9 @@
           </div>
         </div>
       </div>
-      <div class="about">
-        <div class="about__inner inner">
-          <div class="about__wrapper wrapper" style='background-image: url(./img/about_bg@2x.png)'>
-            <h3 class="about__title title">About us</h3>
-            <div class="text-block">Payme Swiss AG is a company with a solid track in the card and financial industry. It was founded by experts with a bank card background from leading card companies in the world and by financial experts with a long track in FinTech and wealth management industries. Payme Swiss has possibility to provide unique card program experience on the EEA markets with a special focus on wearable payments, tokenization and FinTech</div>
-          </div>
-        </div>
-      </div>
-      <div class="contacts">
-        <div class="contacts__inner inner">
-          <div class="contacts__card-logo">
+      <div class="contacts" data-scroll-trigger>
+        <div class="contacts__inner inner" data-anim-group data-duration-anim='1' data-delay-anim='0.15'>
+          <div class="contacts__card-logo" data-anim='from-left'>
             <div class="card-logo">
               <div class="card-logo__image">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="21" viewBox="0 0 17 21">
@@ -322,7 +334,7 @@
               <h2 class="card-logo__text">Payme Swiss</h2>
             </div>
           </div>
-          <div class="contacts__form">
+          <div class="contacts__form" data-anim='from-right'>
             <form class="form">
               <h3 class="form__title title">Contact us</h3>
               <div class="form__adress"> Payme Swiss AG, Genferstrasse 21, <br /> 8002 Zurich, Switzerland </div>

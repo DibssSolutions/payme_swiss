@@ -1,9 +1,7 @@
-import {ACTIVE, OPEN, DISABLED, BODY,WIN_WIDTH,widthMD} from '../constants';
+import { ACTIVE, OPEN, DISABLED, BODY, WIN_WIDTH, widthMD } from '../constants';
 
 export default (() => {
-
   class Tabs {
-
     constructor(options) {
       this.cache = {};
       this.options = options || {};
@@ -27,7 +25,7 @@ export default (() => {
     }
 
     initializeCache() {
-      const {main} = this.options;
+      const { main } = this.options;
       this.cache.main = main;
       this.cache.controls = main.find('[data-tabs-control]');
       this.cache.mobileControls = main.find('[data-mobile-control]');
@@ -46,7 +44,7 @@ export default (() => {
     }
 
     setActiveOnLoad() {
-      const {controls, containers} = this.cache;
+      const { controls, containers } = this.cache;
       for (let i = 0; i < controls.length; i++) {
         const control = $(controls[i]);
         const container = this.getTabContainer(control, containers);
@@ -55,14 +53,15 @@ export default (() => {
           control.addClass(DISABLED);
           continue;
         }
-        // if(container.hasClass('js-no-init-active') && (WIN_WIDTH < widthMD)) continue;
+        if (container.hasClass('js-no-init-active')) continue;
+        console.log(container);
         this.setActiveTab(control, container);
         break;
       }
     }
 
     setActiveOnClick() {
-      const {controls, containers} = this.cache;
+      const { controls, containers } = this.cache;
       controls.each((i, control) => {
         control = $(control);
         const container = this.getTabContainer(control, containers);
@@ -70,14 +69,22 @@ export default (() => {
         control.on('click', e => {
           console.log(222);
           e.preventDefault();
-          if (this.checkTabState(control, container)|| control.hasClass(ACTIVE)) return;
+          if (
+            this.checkTabState(control, container) ||
+            control.hasClass(ACTIVE)
+          )
+            return;
           controls.removeClass(ACTIVE);
           containers.removeClass(OPEN);
           this.setActiveTab(control, container);
         });
         control.on('touchend', e => {
           e.preventDefault();
-          if (this.checkTabState(control, container)|| control.hasClass(ACTIVE)) return;
+          if (
+            this.checkTabState(control, container) ||
+            control.hasClass(ACTIVE)
+          )
+            return;
           controls.removeClass(ACTIVE);
           containers.removeClass(OPEN);
           this.setActiveTab(control, container);
@@ -86,7 +93,7 @@ export default (() => {
     }
 
     setActiveOnHover() {
-      const {controls, containers} = this.cache;
+      const { controls, containers } = this.cache;
       controls.each((i, control) => {
         control = $(control);
         const container = this.getTabContainer(control, containers);
@@ -94,7 +101,11 @@ export default (() => {
         control.on('mouseenter', e => {
           let winWidth = this.getWindowWidth();
           if (winWidth > widthMD) {
-            if (this.checkTabState(control, container)|| control.hasClass(ACTIVE)) return;
+            if (
+              this.checkTabState(control, container) ||
+              control.hasClass(ACTIVE)
+            )
+              return;
             controls.removeClass(ACTIVE);
             containers.removeClass(OPEN);
             this.setActiveTab(control, container);
@@ -108,7 +119,11 @@ export default (() => {
           if (winWidth < widthMD) {
             if (control.hasClass('js-mobile-control')) {
               e.preventDefault();
-              if (this.checkTabState(control, container)|| control.hasClass(ACTIVE)) return;
+              if (
+                this.checkTabState(control, container) ||
+                control.hasClass(ACTIVE)
+              )
+                return;
               controls.removeClass(ACTIVE);
               containers.removeClass(OPEN);
               this.setActiveTab(control, container);
@@ -116,12 +131,15 @@ export default (() => {
           }
         });
       });
-
     }
 
     //utils
     checkTabState(control, container) {
-      return control.hasClass(DISABLED) || control.attr('disabled') || !container.length;
+      return (
+        control.hasClass(DISABLED) ||
+        control.attr('disabled') ||
+        !container.length
+      );
     }
 
     getWindowWidth() {
@@ -129,7 +147,9 @@ export default (() => {
     }
 
     getTabContainer(control, containers) {
-      return containers.filter(`[data-tabs-container="${control.data('tabs-control')}"]`);
+      return containers.filter(
+        `[data-tabs-container="${control.data('tabs-control')}"]`
+      );
     }
 
     setActiveTab(control, container) {
@@ -142,19 +162,21 @@ export default (() => {
 
     mobDrop() {
       this.cache.current.on('click', () => {
-        (!this.cache.main.hasClass(OPEN))
+        !this.cache.main.hasClass(OPEN)
           ? this.cache.main.addClass(OPEN)
           : this.cache.main.removeClass(OPEN);
       });
       BODY.on('click touchend', e => {
-        if ($(e.target).closest(this.cache.current).length || !this.cache.main.hasClass(OPEN)) return;
+        if (
+          $(e.target).closest(this.cache.current).length ||
+          !this.cache.main.hasClass(OPEN)
+        )
+          return;
         this.cache.main.removeClass(OPEN);
       });
     }
+  }
 
-  };
-
-  $('[data-tabs]').each((i, main) => new Tabs({ main: $(main) }) );
+  $('[data-tabs]').each((i, main) => new Tabs({ main: $(main) }));
   // $('[data-tabshover]').each((i, main) => new Tabs({ main: $(main), hover: true}) );
-
 })();

@@ -6,6 +6,9 @@
     position: absolute
     top: 0
     left: 15px
+    +sm 
+      position: static
+      margin: 0 15px
   &__form
     position: relative
     float: right
@@ -13,6 +16,10 @@
     margin-bottom: 66px
     margin-top: 44px
     z-index: 3
+    overflow: hidden
+    +sm 
+      width: 100%
+      margin-top: -30px
 
 .card-logo
   padding: 85px 155px
@@ -20,6 +27,9 @@
   font-size: 23px
   color: $white
   text-align: center
+  +sm 
+    padding: 40px 80px
+    font-size: 20px
   &__image 
     svg
       height: 87px

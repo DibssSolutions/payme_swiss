@@ -11,12 +11,12 @@
         <div class="wearables__text" data-tabs-container="keyFobs">
           <h3 class="title">Wearables_2</h3>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur illum, sed repellendus laboriosam repellat nostrum, aliquam itaque animi atque provident iste quam facere. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima vel iusto dicta aliquam voluptatem eum. Pariatur voluptatum eum esse id minus minima tenetur.
+              We are proud to be the first program manager provide unique passive payment wearables (without battery) certified by Mastercard for your program:
         </div>
         <div class="wearables__text" data-tabs-container="other">
           <h3 class="title">Wearables_3</h3>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam debitis sit nam, labore rem asperiores voluptate, deleniti quod quisquam beatae aspernatur fugiat.
+              We are proud to be the first program manager provide unique passive payment wearables (without battery) certified by Mastercard for your program:
           </p>
         </div>
       </div>
@@ -55,7 +55,12 @@
       <div class="wearables__info-wrapper">
         <div class="wearables__info">
           <span>No battery needed</span>
-          {{ mixins.icon('battery') }}
+          <span class="battery">
+            <span class="battery__line"></span>
+            {{ mixins.icon('battery_full') }}
+            <!-- {{ mixins.icon('battery') }} -->
+          </span>
+          
         </div>
         
       </div>

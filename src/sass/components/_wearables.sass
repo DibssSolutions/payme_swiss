@@ -1,15 +1,17 @@
 .wearables
   margin-bottom: 174px
+  +sm 
+    text-align: center
+    margin-bottom: 144px
   &__wrapper
     position: relative
     display: flex
     flex-direction: column
     flex-wrap: wrap
-    justify-content: space-between
     min-height: 447px
     background-color: $white
     +sm
-      max-height: inherit
+      min-height: inherit
   &__images
     position: absolute !important
     right: 0
@@ -21,11 +23,14 @@
     align-items: center
     justify-content: center
     +sm
-      position: static !important
+      position: relative !important
+      left: 0
       max-width: inherit
       min-height: inherit
   &__image
-    padding: 30px 120px 30px 150px
+    // padding: 30px 120px 30px 150px
+    padding: 30px
+    // padding: 30px 160px 30px 150px
     +coverdiv
     display: flex
     align-items: center
@@ -38,7 +43,7 @@
       max-height: 390px
       object-fit: cover
       +sm 
-        max-height: 200px
+        max-height: 400px
   &__texts,
   &__tabs,
   &__info-wrapper
@@ -47,20 +52,26 @@
       width: 100%
   &__texts
     display: flex
-    margin-bottom: 24px
-    // overflow: auto
-    +sm
-      height: auto
+    margin-bottom: 8px
   &__text
     padding: 40px 48px 10px 33px
+    +sm 
+      padding: 28px 20px 10px
     .title
       margin-bottom: 7px
   &__tabs
     padding-left: 33px
     padding-bottom: 12px
     padding-top: 12px
+    margin-bottom: auto
+    +sm 
+      padding-left: 20px
   &__info-wrapper
     background-image: $grad
+    +hover
+      .battery__line
+        &:after
+          transform: translateY(0)
     +sm 
       max-height: 83px
   &__info
@@ -69,7 +80,7 @@
     justify-content: space-between
     align-items: center
     +sm 
-      padding: 30px
+      padding: 30px 20px
     span
       color: $white
       +bigText
@@ -80,3 +91,25 @@
       color: $white
       display: inline-block
       vertical-align: middle
+
+.battery
+  position: relative
+  +hover
+    .battery__line
+      &:after
+        transform: translateY(0)
+  &__line
+    position: absolute
+    top: 50%
+    left: 50%
+    height: 140%
+    width: 2px
+    overflow: hidden
+    transform: translate(-50%, -50%) rotate(46deg)
+    transform-origin: center
+    &:after
+      content: ''
+      +coverdiv
+      background-color: $white
+      transform: translateY(-101%)
+      transition: transform 0.4s

@@ -5,13 +5,15 @@
     text-align: center
     padding-top: 204px
     padding-bottom: 60px
+    +sm 
+      padding: 186px 24px 20px
+
   &__cards
     text-align: center
     position: relative
-    top: -351px
-    // margin-top: -200px
-    // left: 50%
-    // transform: translateX(-50%)
+    top: -271px
+    +sm 
+      top: -238px
   &__tabs
     margin-top: 22px
 
@@ -20,22 +22,22 @@
   position: absolute
   left: 50%
   transform: translateX(-50%)
-  // text-align: center
-  // width: 100%
+  transition: transform 1s ease-out
   @for $i from 1 through 4
     &:nth-child(#{$i})
-      top: ($i - 1) * 66 + px
+      top: ($i - 1) * 32 + px
       z-index: 10 - $i
-  // &:after
-  //   content: ''
-  //   height: 3px
-  //   width: 3px
-  //   background-color: red
-  //   position: absolute
-  //   +vcenter
-    
+      +sm 
+        top: ($i - 1) * 26 + px
+  .is-animate &
+    @for $i from 1 through 4
+      &:nth-child(#{$i})
+        transform: translate(-50%, -1 * (4 - $i) * 34 + px)
+        +sm 
+          transform: translate(-50%, -1 * (4 - $i) * 20 + px)
   img
     max-width: 343px
     display: inline-block
-    // drop-shadow: 0 0 20px rgba($black, 0.2)
     filter: drop-shadow(0 20px 20px rgba($black, 0.6))
+    +sm 
+      max-width: 240px

@@ -1,6 +1,14 @@
-<header class="header">
+<header class="header js-header">
   <div class="header__inner inner">
     <div class="header__wrapper">
+      <div class="header__burger">
+        <div class="burger js-mob-toggler">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
       <div class="header__logo">
         <a href="/" class="logo">
           <img class="logo__image" src="./img/logo.svg" alt="logo"/>
@@ -23,9 +31,9 @@
               }
             ] %}
               <li class="main-nav__item">
-                <a href="{{ item.link }}" class="main-nav__link">{{
-                item.text
-              }}</a>
+                <a href="{{ item.link }}" class="main-nav__link">
+                  <span>{{ item.text }}</span>
+                </a>
               </li>
             {% endfor %}
           </ul>
