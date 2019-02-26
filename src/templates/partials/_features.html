@@ -1,0 +1,49 @@
+<div class="features">
+  <div class="features__inner inner">
+    <div class="features__wrapper">
+      {% for feature in [
+        {
+          title: 'Regulatory compliance',
+          text: 'With our experience with management of affluent, HNWI and UHNWI customers and team of leading compliance consultants, we are ready to provide you continuous monitoring of your card program.',
+          icon: 'regulatory',
+          color: 'red-gradient'
+        },
+        {
+          title: 'Customer onboarding',
+          text: 'For each new card program it is important to onboard customers fast and in compliance with the existing laws. We are working in close partnership with leading eKYC providers in order to make onboarding efficient, reliable and fast.',
+          icon: 'customers',
+          color: 'main-gradient'
+        },
+        {
+          title: 'Fraud mitigation',
+          text: 'We are using award winning fraud mitigation software to achieve highest security standards for your program.',
+          icon: 'shield',
+          color: 'blue-gradient'
+        },
+        {
+          title: 'Regulatory compliance',
+          text: 'With our experience with management of affluent, HNWI and UHNWI customers and team of leading compliance consultants, we are ready to provide you continuous monitoring of your card program.',
+          image_text: '360°',
+          color: 'red'
+
+        }
+      ] %}
+      <div class="features__item">
+        <div class="feature">
+          <div class="feature__image feature__image_{{ feature.color }}">
+            {% if feature.icon %}
+              {{ mixins.icon(feature.icon) }}
+            {% else  %}
+              <div class="feature__image-text">{{ feature.image_text }}</div>
+            {% endif %}
+            
+          </div>
+          <h3 class="feature__title title">{{ feature.title }}</h3>
+          <div class="feature__text">{{ feature.text }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+

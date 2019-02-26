@@ -1,10 +1,8 @@
 .luxury
+  margin-bottom: 18px
   &__wrapper
-    background-color: $white
-    // background-color: #fff
-    text-align: center
     position: relative
-    padding-top: 170px
+    padding-top: 182px
     padding-bottom: 70px
   &__image
     position: absolute
@@ -12,17 +10,18 @@
     left: 0
     width: 100%
     text-align: center
+    animation: soar 3.5s ease-in-out infinite
     &:after
       content: ''
       position: absolute
       top: 40px
       left: 50%
-      
       transform: translateX(-50%)
       height: 2px
       width: 200px
       // background-color: red
-      box-shadow: 0 110px 100px 60px rgba($black, 0.3);
+      box-shadow: 0 110px 100px 60px rgba($black, 0.3)
+      animation: fadeShadow 3.5s ease-in-out infinite
     // svg
     //   width: 394px
     img
@@ -38,5 +37,19 @@
 
       // box-shadow: -8px 119px 30px -84px rgba(0,0,0,0.75);
       // filter: drop-shadow(12px 12px 25px rgba(0,0,0,0.5))
+  &__title
+    margin-bottom: 17px
   &__subtitle
     margin-bottom: 8px
+
+@keyframes soar
+  0%, 100% 
+    transform: translate3d(0,0,0)
+  50%
+    transform: translate3d(0,-10px,0)
+
+@keyframes fadeShadow
+  0%, 100% 
+    opacity: 1
+  50%
+    opacity: 0.2

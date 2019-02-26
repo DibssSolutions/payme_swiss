@@ -51,15 +51,19 @@
         margin-bottom: 0
         +sm 
           margin-bottom: 10px
+    +hover
+      span:after
+        transform: translateX(0)
     &.is-active
       span:after
-        +fadein
+        transform: translateX(0)
       .tabs_bg &
         background-image: $grad
         color: $white
     span 
       display: inline-block
       position: relative
+      overflow: hidden
       &:after
         content: ''
         position: absolute
@@ -68,11 +72,12 @@
         height: 2px
         width: 100%
         background-color: $violet
-        +fadeout(0.4s)
+        transform: translateX(-100%)
+        transition: transform 0.4s
         .tabs_bg &
           display: none
     .tabs_bg &
-      padding: 10px 15px 8px 15px
+      padding: 10px 15px 10px 15px
       background-color: $light
   &__wrapper
     max-width: 518px

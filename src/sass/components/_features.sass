@@ -1,0 +1,53 @@
+.feature
+  padding: 35px 24px 45px
+  text-align: center
+  background-color: $white
+  
+  position: relative
+  &:after
+    z-index: -1
+    content: ''
+    +coverdiv
+    background-color: $white
+    transition: transform 0.4s
+    transform-origin: center
+    box-shadow: 0 10px 24px -10px rgba($black, 0.09)
+  +hover
+    &:after
+      transform: scale(1.03)
+      
+  &__image
+    display: inline-block
+    +circle(90)
+    position: relative
+    &_red-gradient
+      background-image: $redGrad
+    &_main-gradient
+      background-image: $grad
+    &_blue-gradient
+      background-image: $blueGrad
+    &_red
+      background-color: $red
+    .icon
+      +vcenter
+      font-size: 36px
+      color: $white
+  &__image-text
+    +vcenter
+    color: $white
+    font-size: 25px
+    font-weight: 600
+    line-height: 1
+
+.features
+  margin-bottom: 20px 
+  &__wrapper
+    display: flex
+    flex-wrap: wrap
+    align-items: stretch
+    margin: 0 -5px
+  &__item
+    +flex-size(25%)
+    padding: 0 5px
+    .feature
+      height: 100%

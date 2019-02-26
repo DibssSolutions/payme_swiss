@@ -1,0 +1,91 @@
+.contacts
+  +clr
+  &__inner
+    position: relative
+  &__card-logo
+    position: absolute
+    top: 0
+    left: 15px
+  &__form
+    position: relative
+    float: right
+    width: 53.5%
+    margin-bottom: 66px
+    margin-top: 44px
+    z-index: 3
+
+.card-logo
+  padding: 85px 155px
+  background-image: $grad
+  font-size: 23px
+  color: $white
+  text-align: center
+  &__image 
+    svg
+      height: 87px
+      width: auto
+      fill: $white
+
+.form
+  padding: 70px 133px 80px
+  background-color: $white
+  text-align: center
+  box-shadow: 0 22px 44px -11px rgba($black, 0.16)
+  &__title
+    text-transform: uppercase
+    margin-bottom: 7px
+  &__adress
+    margin-bottom: 30px
+  &__group
+    position: relative
+    &:not(:last-child)
+      margin-bottom: 24px
+  &__submit
+    position: absolute
+    right: 0
+    bottom: -2px
+    transform: translateY(-50%)
+
+.input
+  width: 100%
+  padding: 9px 9px 9px 0
+  font-family: $montserrat
+  font-size: 12px
+  font-weight: 600
+  border-bottom: 1px solid #e0e0e0
+  color: $mainTextColor
+  line-height: 1.2
+  &_textarea
+    padding-right: 60px
+  &.error
+    border-bottom-color: $error
+  &:placeholder
+    color: #918f8f
+
+textarea
+  border: none
+  border-bottom: 1px solid #e0e0e0
+  height: 34px
+  resize: none
+  box-sizing: border-box
+  display: block
+  overflow: hidden
+
+.submit-btn
+  background-color: transparent
+  color: #6e4fa0
+  font-family: $montserrat
+  font-size: 12px
+  font-weight: 600
+  line-height: 1.2
+
+.form-error
+  position: absolute
+  top: 100%
+  left: 0
+  color: $error
+  font-family: $montserrat
+  font-weight: 600
+  font-size: 10px
+  padding-top: 4px
+  line-height: 1.428

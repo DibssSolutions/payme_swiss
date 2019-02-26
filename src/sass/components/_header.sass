@@ -7,7 +7,6 @@
     justify-content: space-between
 
 .main-nav
-  
   &__list
     display: flex
     align-items: center
@@ -20,6 +19,22 @@
     line-height: 1.2
 
 .logo
-  img
+  +flex-center
+  &__text
+    margin-left: 10px
+    color: $mainTextColor
+    font-family: $montserrat
+    font-size: 15px
+    font-weight: 600
+    line-height: 1.533
+    letter-spacing: -0.04em
+    .logo_white &
+      color: $white
+    .logo_big &
+      font-size: 23px
+      margin-left: 18px
+  &__image
     display: block
     max-width: 100%
+    .logo_big &
+      height: 35px
