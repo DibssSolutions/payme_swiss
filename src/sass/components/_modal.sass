@@ -1,0 +1,57 @@
+[data-modal]
+  position: fixed
+  z-index: -1
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  opacity: 0
+  visibility: hidden
+  min-width: 320px
+  +vertical
+  +gpu
+  overflow: auto
+  transition: opacity 0.3s, visibility 0.3s, z-index 0.3s
+
+[data-modal]
+  &.is-open
+    opacity: 1
+    visibility: visible
+    z-index: 100
+
+[data-modal-container]
+  position: relative
+  z-index: 1
+  vertical-align: middle
+  display: inline-block
+  max-width: 1000px
+  margin: 0 auto
+
+[data-modal-close]
+  position: absolute
+  background-image: $redGrad
+  +circle(40)
+  // background-color: $blue
+  font-size: 0
+  right: 40px
+  top: 42px
+  .icon
+    +vcenter
+    font-size: 18px
+    color: $white
+
+.modal
+  &__container
+    background-color: $white
+    padding: 120px
+  &__inner
+    
+  &__text
+    color: rgba($mainTextColor, 0.5)
+    font-family: $montserrat
+    font-size: 12px
+    font-weight: 600
+    line-height: 1.667
+    +sm 
+      line-height: 1.833
+  

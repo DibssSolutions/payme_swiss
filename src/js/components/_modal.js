@@ -1,4 +1,4 @@
-import { OPEN, ACTIVE, BODY, OVERFLOW_HIDDEN, ANIMATE } from '../constants';
+import { OPEN, ACTIVE, BODY, HTML, OVERFLOW_HIDDEN, ANIMATE } from '../constants';
 
 (() => {
   const controls = $('[data-modal-control]');
@@ -15,12 +15,14 @@ import { OPEN, ACTIVE, BODY, OVERFLOW_HIDDEN, ANIMATE } from '../constants';
       if (!control.hasClass(ACTIVE)) {
         modals.removeClass(OPEN);
         modal.addClass(OPEN);
+        HTML.addClass(OVERFLOW_HIDDEN);
         controls.removeClass(ACTIVE);
         control.addClass(ACTIVE);
         $(btns).each((index, el) => $(el).addClass(ANIMATE));
       } else {
         modal.removeClass(OPEN);
         control.removeClass(ACTIVE);
+        HTML.removeClass(OVERFLOW_HIDDEN);
       }
     });
   });
@@ -33,6 +35,7 @@ import { OPEN, ACTIVE, BODY, OVERFLOW_HIDDEN, ANIMATE } from '../constants';
     const hide = () => {
       modal.removeClass(OPEN);
       controls.removeClass(ACTIVE);
+      HTML.removeClass(OVERFLOW_HIDDEN);
     };
 
     BODY.on('click', e => {
