@@ -1,4 +1,12 @@
-import { ACTIVE, OPEN, DISABLED, BODY, WIN_WIDTH, widthMD } from '../constants';
+import {
+  ACTIVE,
+  OPEN,
+  DISABLED,
+  BODY,
+  WIN_WIDTH,
+  widthMD,
+  HIDDEN
+} from '../constants';
 
 export default (() => {
   class Tabs {
@@ -54,7 +62,6 @@ export default (() => {
           continue;
         }
         if (container.hasClass('js-no-init-active')) continue;
-        console.log(container);
         this.setActiveTab(control, container);
         break;
       }
@@ -67,7 +74,6 @@ export default (() => {
         const container = this.getTabContainer(control, containers);
 
         control.on('click', e => {
-          console.log(222);
           e.preventDefault();
           if (
             this.checkTabState(control, container) ||
@@ -77,6 +83,11 @@ export default (() => {
           controls.removeClass(ACTIVE);
           containers.removeClass(OPEN);
           this.setActiveTab(control, container);
+
+          const hideAfterSelection = $(this.options.main).find(
+            '.js-hide-on-tab-selected'
+          );
+          hideAfterSelection.each((index, el) => $(el).addClass(HIDDEN));
         });
         control.on('touchend', e => {
           e.preventDefault();

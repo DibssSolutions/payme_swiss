@@ -1,33 +1,57 @@
+{% macro cardsStack() %}
+  <div class="cards-stack">
+      {% for item in[
+        {
+          title: 'card_1.png'
+        }, {
+          title: 'card_2.png'
+        }, {
+          title: 'card_3.png'
+        }, {
+          title: 'card_4.png'
+        }
+      ] %}
+        <div class="parallax-card">
+          <img src="./img/{{ item.title }}" alt="card" />
+        </div>
+      {% endfor %}
+    </div>
+{% endmacro %}
+
 <div class="prepaid" data-tabs="prepaid-tabs">
   <div class="prepaid__inner inner">
     <div class="prepaid__wrapper" data-scroll-trigger>
-      <div class="prepaid__cards">
-        {% for item in[
-          {
-            title: 'card_1.png',
-            rellax: 2
-          }, {
-            title: 'card_2.png',
-            rellax: 2
-          }, {
-            title: 'card_3.png',
-            rellax: 2
-          }, {
-            title: 'card_4.png',
-            rellax: 2
-          }
-        ] %}
-          <div class="parallax-card">
-            <img src="./img/{{ item.title }}" alt="" class="rellax rellax-{{ loop.index }}" data-rellax-speed="{{ item.rellax }}"/>
-          </div>
-        {% endfor %}
+      <div class="prepaid__cards-stack js-hide-on-tab-selected">
+        {{ cardsStack() }}
+        <div class="prepaid__title title-lg">Prepaid cards</div>
       </div>
-      <div class="prepaid__title title-lg">Prepaid cards</div>
-
+      <div class="prepaid__card-tabs" data-tabs-wrapper="prepaid-tabs-wrapper">
+        <div class="prepaid__card-tab" data-tabs-container="multiCards">
+            <div class="prepaid__cards-stack is-animate">
+              {{ cardsStack() }}
+              <div class="prepaid__title title-lg">Prepaid cards</div>
+            </div>
+        </div>
+        <div class="prepaid__card-tab" data-tabs-container="virtualCards">
+          <div class="prepaid__virtual-card">
+            <img src="./img/virtual_card_image.png" alt="">
+          </div>
+        </div>
+        <div class="prepaid__card-tab" data-tabs-container="metalCards">
+          <div class="prepaid__card">
+            <img src="./img/unique_design_card.png" alt="">
+          </div>
+        </div>
+        <div class="prepaid__card-tab" data-tabs-container="uniqueDesignCards">
+          <div class="prepaid__card">
+            <img src="./img/unique_design_card.png" alt="">
+          </div>
+        </div>
+      </div>
       <div class="prepaid__tabs">
         <div class="tabs tabs_bg">
           <div class="tabs__out">
-            <div class="tabs__current" data-tabs-current="data-tabs-current">
+            <div class="tabs__current" data-tabs-current="prepaid-tabs-current">
               <span></span>
             </div>
             <ul class="tabs__list">
@@ -70,3 +94,4 @@
     </div>
   </div>
 </div>
+

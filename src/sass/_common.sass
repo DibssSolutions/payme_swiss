@@ -21,3 +21,70 @@ a
 
 .out
   overflow: hidden
+
+.text-card,
+.image-card
+  width: 100%
+  +flex-center
+  min-height: 391px
+  +md 
+    min-height: 350px
+
+.text-card
+  background-color: $white
+  text-align: center
+  box-shadow: 0 22px 44px -11px rgba($black, 0.16)
+  padding: 20px 70px
+  +md 
+    padding: 20px 35px
+  +sm 
+    min-height: inherit
+    line-height: 1.667
+    padding: 27px 35px 50px
+  &__title
+    margin-bottom: 10px
+  &__form
+    padding-bottom: 10px
+    +sm 
+      padding-top: 45px
+      padding-bottom: 30px
+
+.image-card
+  padding: 10px
+  text-align: center
+  background-color: $white
+  box-shadow: 0 12px 14px -10px rgba($black, 0.11)
+  align-items: stretch
+  +sm 
+    min-height: 210px
+    box-shadow: 0 6px 7px -5px rgba($black, 0.11)
+  &_logo
+    background-image: $grad
+    box-shadow: none
+    align-items: center
+    +sm 
+      min-height: 165px
+  &__text
+    color: $white
+    font-size: 32px
+    letter-spacing: 0.019em
+    line-height: 1
+    +sm 
+      font-size: 20px
+  &__logo
+    margin-bottom: 18px
+    +sm 
+      margin-bottom: 9px
+    svg
+      height: 69px
+      width: auto
+      fill: $white
+      +sm 
+        height: 44px
+  &__image
+    width: 100%
+    +cover
+
+.section-title
+  margin-bottom: 10px
+

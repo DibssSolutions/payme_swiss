@@ -2,12 +2,23 @@
   margin-bottom: 22px
   &__wrapper
     padding: 50px 0
+    +sm 
+      padding: 40px 17px 20px
+  &__title
+    +sm
+      margin-bottom: 22px
   &__logos
     +flex-center
-    margin: 30px -20px 0
+    flex-wrap: wrap
+    margin: 24px -20px 0
+    +sm 
+      margin: 36px auto 0
   &__logo
     padding: 0 20px
     position: relative
+    +sm 
+      margin-bottom: 31px
+      padding: 0 10px
     img
       max-width: 100%
       display: block

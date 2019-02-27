@@ -18,7 +18,8 @@
       top: 0
       left: 0
       min-height: 100vh
-      padding: 147px 130px 40px 66px
+      min-width: 200px
+      padding: 147px 50px 40px 
       transform: translateX(-101%)
       background-color: $white
       transition: transform $tr, box-shadow $tr
@@ -34,6 +35,9 @@
       top: 50%
       transform: translateY(-50%)
       left: 15px
+  &__logo
+    position: relative
+    z-index: 100
 
 .main-nav
   &__list
@@ -44,6 +48,8 @@
       flex-direction: column
   &__item
     padding: 0 30px
+    +sm
+      padding: 20px 0
   &__link
     color: $mainTextColor
     font-size: 0
@@ -59,6 +65,8 @@
       display: inline-block
       position: relative
       overflow: hidden
+      +sm 
+        font-size: 18px
       &:after
         content: ''
         position: absolute

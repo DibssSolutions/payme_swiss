@@ -1,6 +1,6 @@
 <div class="features js-navigation-section" id="services">
   <div class="features__inner inner">
-    <div class="features__wrapper">
+    <div class="features__wrapper js-mobile-slider">
       {% for feature in [
         {
           title: 'Regulatory compliance',
@@ -21,8 +21,8 @@
           color: 'blue-gradient'
         },
         {
-          title: 'Regulatory compliance',
-          text: 'With our experience with management of affluent, HNWI and UHNWI customers and team of leading compliance consultants, we are ready to provide you continuous monitoring of your card program.',
+          title: '360° program management',
+          text: 'We are able to provide out clients a one-stop-shop for your program. Would like to introduce concierge service for your card clients? Introduce unique card or wearable designs? Have a unique app experience? We can tackle all of your needs so you can focus on the business development.',
           image_text: '360°',
           color: 'red'
 
@@ -36,7 +36,6 @@
             {% else  %}
               <div class="feature__image-text">{{ feature.image_text }}</div>
             {% endif %}
-            
           </div>
           <h3 class="feature__title title">{{ feature.title }}</h3>
           <div class="feature__text">{{ feature.text }}</div>

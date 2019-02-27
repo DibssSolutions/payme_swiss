@@ -12,6 +12,8 @@
   +gpu
   overflow: auto
   transition: opacity 0.3s, visibility 0.3s, z-index 0.3s
+  background-color: rgba($black, 0.7)
+  padding: 15px
 
 [data-modal]
   &.is-open
@@ -35,23 +37,34 @@
   font-size: 0
   right: 40px
   top: 42px
+  +sm 
+    +circle(20)
+    right: 16px
+    top: 16px
   .icon
     +vcenter
     font-size: 18px
     color: $white
+    +sm 
+      font-size: 10px
 
 .modal
   &__container
     background-color: $white
-    padding: 120px
-  &__inner
-    
+    padding: 120px 120px 135px
+    +sm 
+      padding: 40px 15px
+  &__title
+    text-align: left
+    margin-bottom: 44px
+    +sm 
+      margin-bottom: 20px
   &__text
     color: rgba($mainTextColor, 0.5)
     font-family: $montserrat
     font-size: 12px
     font-weight: 600
-    line-height: 1.667
+    line-height: 1.883
     +sm 
       line-height: 1.833
   

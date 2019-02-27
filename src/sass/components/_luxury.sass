@@ -1,46 +1,37 @@
 .luxury
-  margin-bottom: 18px
+  margin-bottom: 20px
   &__wrapper
     position: relative
-    padding-top: 182px
+    padding-top: 114px
     padding-bottom: 70px
-  &__image
+    +sm
+      padding: 130px 24px 32px
+  &__images
+    display: flex
+    justify-content: center
+    align-items: flex-start
     position: absolute
-    top: 0
+    top: -140px
     left: 0
     width: 100%
-    text-align: center
+    padding: 0 150px
     animation: soar 3.5s ease-in-out infinite
-    &:after
-      content: ''
-      position: absolute
-      top: 40px
-      left: 50%
-      transform: translateX(-50%)
-      height: 2px
-      width: 200px
-      // background-color: red
-      box-shadow: 0 110px 100px 60px rgba($black, 0.3)
-      animation: fadeShadow 3.5s ease-in-out infinite
-    // svg
-    //   width: 394px
-    img
-      margin-top: -66px
-      max-width: 394px
-      // position: absolute
-      // top: 0
-      // left: 0
-      // &:first-child
-      //   z-index: 2
-      // &:last-child
-      //   opacity: 1
-
-      // box-shadow: -8px 119px 30px -84px rgba(0,0,0,0.75);
-      // filter: drop-shadow(12px 12px 25px rgba(0,0,0,0.5))
+    backface-visibility: hidden
+    +sm 
+      top: -60px
+  &__main-image
+    max-width: 525px
+    +sm 
+      max-width: 300px
+  &__circle
+    margin-top: 78px
+    max-width: 143px
+    +sm 
+      display: none
   &__title
-    margin-bottom: 17px
-  &__subtitle
-    margin-bottom: 8px
+    margin-bottom: 19px
+  // &__subtitle
+  //   margin-bottom: 10px
 
 @keyframes soar
   0%, 100% 

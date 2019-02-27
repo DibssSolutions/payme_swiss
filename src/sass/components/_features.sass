@@ -1,8 +1,7 @@
 .feature
-  padding: 35px 24px 45px
+  padding: 35px 20px 45px
   text-align: center
   background-color: $white
-  
   position: relative
   &:after
     z-index: -1
@@ -15,11 +14,13 @@
   +hover
     &:after
       transform: scale(1.03)
-      
   &__image
     display: inline-block
     +circle(90)
     position: relative
+    margin-bottom: 8px
+    +sm
+      margin-bottom: 4px
     &_red-gradient
       background-image: $redGrad
     &_main-gradient
@@ -38,16 +39,43 @@
     font-size: 25px
     font-weight: 600
     line-height: 1
+  &__title
+    max-width: 120px
+    margin: 0 auto 10px
 
 .features
-  margin-bottom: 20px 
+  margin-bottom: 40px 
+  +sm 
+    margin-bottom: 16px
   &__wrapper
     display: flex
     flex-wrap: wrap
     align-items: stretch
     margin: 0 -5px
+    +sm 
+      margin: 0 auto
+      +fadeout($tr)
+      &.slick-initialized
+        +fadein
+    
   &__item
     +flex-size(25%)
     padding: 0 5px
+    +lg 
+      +flex-size(50%)
+      margin-bottom: 10px
+    +sm 
+      padding: 0 10px
+      height: 100%
     .feature
       height: 100%
+  .slick-track
+    display: flex
+  .slick-slide 
+    max-width: 262px
+    height: auto
+    & > div
+      height: 100%
+
+    // .feature
+    //   min-height: 489px

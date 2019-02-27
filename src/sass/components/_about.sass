@@ -7,29 +7,31 @@
 //     background-repeat: no-repeat
 
 .about
-  +clr
   margin-bottom: 50px
-  &__inner
+  +sm 
+    margin-bottom: 20px
+  &__wrapper
     position: relative
+    +clr
   &__image-wrapper
     position: absolute
     right: 0
     top: 0
     width: 58.4%
-  &__image
-    +cover
-    padding-bottom: 70%
+    +sm 
+      position: static
+      width: 100%
+      padding: 0 14px
   &__text-wrapper
     position: relative
     float: left
     margin-top: 60px
     width: 53.5%
     z-index: 5
+    +sm 
+      float: none
+      width: 100%
+      margin-top: -28px
+  .text-card__inner
+    padding-top: 10px
 
-.text-card
-  padding: 113px 62px 115px
-  background-color: $white
-  text-align: center
-  box-shadow: 0 22px 44px -11px rgba($black, 0.16)
-  &__title
-    margin-bottom: 8px

@@ -1,12 +1,19 @@
 .footer
   padding: 70px 0
   background-color: $mainTextColor
+  +md 
+    padding: 50px 0
+  +sm
+    padding: 50px 0 30px
   &__inner
     display: flex
     justify-content: space-between
     align-items: center
     +sm 
       flex-direction: column
+  &__details
+    +sm 
+      margin: 18px auto 33px
 
 .details
   +flex-center

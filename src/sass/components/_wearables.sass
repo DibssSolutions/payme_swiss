@@ -1,8 +1,8 @@
 .wearables
-  margin-bottom: 174px
+  // margin-bottom: 174px
   +sm 
     text-align: center
-    margin-bottom: 144px
+    // margin-bottom: 144px
   &__wrapper
     position: relative
     display: flex
@@ -15,7 +15,7 @@
   &__images
     position: absolute !important
     right: 0
-    left: 39.9%
+    left: 35.9%
     height: 100%
     min-height: 400px
     max-width: 64.1%
@@ -36,14 +36,16 @@
     align-items: center
     justify-content: center
     +sm 
-      padding: 15px
+      padding: 15px 35px
     img
       display: block
-      max-width: 100%
-      max-height: 390px
-      object-fit: cover
-      +sm 
-        max-height: 400px
+      max-width: 320px
+      max-height: 340px
+      width: auto
+      height: auto
+      margin-top: 22px
+      // +sm 
+      //   max-height: 400px
   &__texts,
   &__tabs,
   &__info-wrapper
@@ -53,7 +55,9 @@
   &__texts
     display: flex
     margin-bottom: 8px
-  &__text
+  &__text,
+  &__text[data-tabs-container].is-open
+    display: block
     padding: 40px 48px 10px 33px
     +sm 
       padding: 28px 20px 10px

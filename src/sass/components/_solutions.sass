@@ -3,49 +3,55 @@
   &__wrapper
     background-color: $white
     text-align: center
-    padding-top: 48px
+    padding-top: 51px
     padding-bottom: 36px
-    // padding-bottom: 300px
+    +sm 
+      padding: 50px 21px 36px
+  // &__title
+  //   margin-bottom: 10px
   &__btn
     +flex-center
-    margin-top: 30px
+    margin-top: 27px
+    +sm 
+      margin-top: 47px
 
 .solutions-cta
   position: relative
-  padding: 30px
+  padding: 18px
   &__img
     display: block
   &__arrow
     position: absolute
     transform-origin: center
     font-size: 0
-    opacity: 0
-    transition: transform 0.4s, opacity 0.4s
+    // opacity: 0
+    transition: transform 0.6s ease-out
     .is-animate &
-      opacity: 1
+      // opacity: 1
     &:nth-child(1)
       top: 0
       left: 0
-      transform: translate(-40px, -40px)
+      transform: translate(-7px, -10px)
       .is-animate &
         transform: translate(0, 0)
     &:nth-child(2)
       top: 0
       right: 0
-      transform: translate(40px, -40px) rotate(90deg)
+      transform: translate(7px, -10px) rotate(90deg)
       .is-animate &
         transform: translate(0, 0) rotate(90deg)
     &:nth-child(3)
       bottom: 0
       right: 0
-      transform: translate(40px, 40px) rotate(180deg)
+      transform: translate(7px,17px) rotate(180deg)
       .is-animate &
         transform: translate(0, 0) rotate(180deg)
     &:nth-child(4)
       bottom: 0
       left: 0
-      transform: translate(-40px, 40px) rotate(-90deg)
+      transform: translate(-7px, 17px) rotate(-90deg)
       .is-animate &
         transform: translate(0, 0) rotate(-90deg)
     .icon
       font-size: 22px
+      color: #e7e7e7

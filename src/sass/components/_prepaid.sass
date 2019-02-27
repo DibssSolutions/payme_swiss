@@ -1,28 +1,100 @@
 .prepaid
-  margin-bottom: 106px
+  margin-bottom: 170px
+  padding-top: 176px
+  +sm 
+    padding-top: 144px
+    margin-bottom: 90px
   &__wrapper
     background-color: $white
-    text-align: center
-    padding-top: 204px
-    padding-bottom: 60px
-    +sm 
-      padding: 186px 24px 20px
-
-  &__cards
-    text-align: center
     position: relative
-    top: -271px
-    +sm 
-      top: -238px
-  &__tabs
-    margin-top: 22px
+    text-align: center
+    padding-top: 336px
+    padding-bottom: 60px
+    +sm
+      padding: 208px 30px 30px
+  &__cards-stack
+    text-align: center
+    position: absolute
+    top: -50px
+    left: 50%
+    transform: translateX(-50%)
+    z-index: 3
+    width: 100%
+    &.is-hidden
+      +fadeout(0s)
+  &__card-tabs
+    &[data-tabs-wrapper]
+      position: absolute
+      top: -50px
+      left: 50%
+      transform: translateX(-50%)
+      width: 100%
+      font-size: 0
+      .prepaid__cards-stack
+        top: 0
+        +sm
+          top: 60px
+      +sm
+        top: -110px
+    img
+      max-width: 100%
+      display: inline-block
+  &__card-tab[data-tabs-container].is-open
+    display: flex
+    justify-content: center
+    .prepaid__virtual-card:after
+      display: block
+  &__title
+    position: absolute
+    top: 252px
+    left: 50%
+    transform: translateX(-50%)
+    width: 100%
+    +lg
+      top: 302px
+    &.is-hidden
+      display: none
+  &__card
+    +sm
+      margin-top: 30px
+    img
+      +sm
+        max-width: 300px
+  &__virtual-card
+    position: relative
+    margin-top: -72px
+    +sm
+      margin-top: 15px
+    img
+      +sm
+        max-width: 200px 
+    &:after
+      display: none
+      content: ''
+      position: absolute
+      bottom: -3px
+      left: -135px
+      right: -135px
+      height: 3px
+      background-color: rgba(#d8d8d8, 0.48)
+      +sm
+        right: -30px
+        left: -30px
+    // position: absolute
+    // top: -122px
+    // left: 50%
+    // transform: translateX(-50%)
+    // width: 100%
+
+.cards-stack
+  position: relative
 
 .parallax-card
   display: inline-block
   position: absolute
   left: 50%
   transform: translateX(-50%)
-  transition: transform 1s ease-out
+  transition: transform 0.5s ease-in-out
   @for $i from 1 through 4
     &:nth-child(#{$i})
       top: ($i - 1) * 32 + px
@@ -36,8 +108,8 @@
         +sm 
           transform: translate(-50%, -1 * (4 - $i) * 20 + px)
   img
-    max-width: 343px
+    max-width: 343px !important
     display: inline-block
     filter: drop-shadow(0 20px 20px rgba($black, 0.6))
     +sm 
-      max-width: 240px
+      max-width: 240px !important

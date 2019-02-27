@@ -8,3 +8,4 @@ import './_heroAnim';
 import './_headerToggler';
 import './_cookies';
 import './_scrollTo';
+import './_featuresSlider';

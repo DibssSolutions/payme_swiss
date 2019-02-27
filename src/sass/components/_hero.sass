@@ -1,8 +1,8 @@
 .hero
+  margin-bottom: 10px
   +sm 
     margin-bottom: 20px
   &__wrapper
-    margin-bottom: 10px
     background-color: $white
     position: relative
     display: flex
@@ -17,7 +17,7 @@
     z-index: 5
     +sm
       flex: 0 0 auto
-      margin: -40px auto 0
+      margin: -42px auto 0
       min-width: inherit
       width: 100%
       max-width: 220px
@@ -53,7 +53,7 @@
       padding: 24px 20px 16px 60px
     +sm 
       position: static
-      padding: 150px 20px 20px
+      padding: 140px 20px 22px
       text-align: center
       width: 100%
       margin-top: -140px
@@ -70,9 +70,13 @@
     +sm 
       font-size: 15px
       padding: 0 40px
+      margin-bottom: 20px
     .is-loaded &
       animation: fadeInDown 0.9s forwards ease-out
   &__text
+    +sm 
+      padding: 0 8px
+
     .is-loaded &
       animation: fadeInDown 0.9s 0.4s forwards ease-out
 
