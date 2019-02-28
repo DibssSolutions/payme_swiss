@@ -1,8 +1,6 @@
 .wearables
-  // margin-bottom: 174px
   +sm 
     text-align: center
-    // margin-bottom: 144px
   &__wrapper
     position: relative
     display: flex
@@ -28,9 +26,7 @@
       max-width: inherit
       min-height: inherit
   &__image
-    // padding: 30px 120px 30px 150px
     padding: 30px
-    // padding: 30px 160px 30px 150px
     +coverdiv
     display: flex
     align-items: center
@@ -40,12 +36,10 @@
     img
       display: block
       max-width: 320px
+      width: 100%
       max-height: 340px
-      width: auto
       height: auto
       margin-top: 22px
-      // +sm 
-      //   max-height: 400px
   &__texts,
   &__tabs,
   &__info-wrapper
@@ -58,7 +52,7 @@
   &__text,
   &__text[data-tabs-container].is-open
     display: block
-    padding: 40px 48px 10px 33px
+    padding: 40px 65px 10px 33px
     +sm 
       padding: 28px 20px 10px
     .title
@@ -69,7 +63,8 @@
     padding-top: 12px
     margin-bottom: auto
     +sm 
-      padding-left: 20px
+      padding-left: 0
+      padding-right: 0
   &__info-wrapper
     background-image: $grad
     +hover

@@ -80,11 +80,6 @@
       +sm
         right: -30px
         left: -30px
-    // position: absolute
-    // top: -122px
-    // left: 50%
-    // transform: translateX(-50%)
-    // width: 100%
 
 .cards-stack
   position: relative
@@ -107,9 +102,12 @@
         transform: translate(-50%, -1 * (4 - $i) * 34 + px)
         +sm 
           transform: translate(-50%, -1 * (4 - $i) * 20 + px)
+  &:last-child
+    img
+      filter: drop-shadow(0 55px 15px rgba(0,0,0,.18))
   img
-    max-width: 343px !important
-    display: inline-block
-    filter: drop-shadow(0 20px 20px rgba($black, 0.6))
+    max-width: 343px
+    filter: drop-shadow(0 64px 10px rgba(0,0,0,.18))
+    display: block
     +sm 
-      max-width: 240px !important
+      max-width: 240px

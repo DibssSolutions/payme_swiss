@@ -28,6 +28,9 @@
   display: none
 
 .tabs
+  &__out
+    +sm
+      overflow: auto
   &__list
     display: flex
     flex-direction: column
@@ -37,9 +40,8 @@
     +sm
       flex-direction: row
       justify-content: flex-start
-      margin: 0 -10px
+      // margin: 0 -10px
       flex-wrap: nowrap
-      overflow: auto
       .tabs_bg &
         flex-direction: column
         align-items: center
@@ -51,6 +53,12 @@
       padding: 0 10px
       flex-grow: 1
       opacity: 0.4
+    &:first-child
+      +sm
+        padding-left: 20px
+    &:last-child
+      +sm
+        padding-right: 20px
     .tabs_bg &
       color: $mainTextColor
       margin: 0 6px
