@@ -7,13 +7,20 @@ html.is-overflow-hidden
 
 
 body
+  position: relative
   background: $light
   color: rgba($mainTextColor, 0.5)
   font-family: $montserrat
   font-size: 12px
   font-weight: 600
   line-height: 1.667
+  transition: opacity .2s ease-in-out, visibility .2s ease-in-out
+  opacity: 0
+  visibility: hidden
   +smooth-font
+  &.is-loaded
+    opacity: 1
+    visibility: visible
   +sm 
     line-height: 1.833
 a 
