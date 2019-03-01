@@ -37,10 +37,13 @@
   font-size: 0
   right: 40px
   top: 42px
+  transition: opacity $tr
   +sm 
     +circle(20)
     right: 16px
     top: 16px
+  +hover 
+    opacity: 0.8
   .icon
     +vcenter
     font-size: 18px
