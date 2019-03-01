@@ -90,6 +90,7 @@
   left: 50%
   transform: translateX(-50%)
   transition: transform 0.8s ease-in-out
+  pointer-events: none
   @for $i from 1 through 4
     &:nth-child(#{$i})
       top: ($i - 1) * 32 + px

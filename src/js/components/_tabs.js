@@ -87,7 +87,7 @@ export default (() => {
           const hideAfterSelection = $(this.options.main).find(
             '.js-hide-on-tab-selected'
           );
-          hideAfterSelection.each((index, el) => $(el).addClass(HIDDEN));
+          hideAfterSelection.addClass(HIDDEN);
         });
         control.on('touchend', e => {
           e.preventDefault();
