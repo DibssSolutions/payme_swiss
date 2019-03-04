@@ -1,7 +1,11 @@
 .header
   background-color: $white
-  padding: 12px 0
-  position: relative
+  padding: 16px 0
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 100
   +sm 
     padding: 14px 0
   &__wrapper
@@ -37,7 +41,7 @@
       left: 15px
   &__logo
     position: relative
-    z-index: 100
+    z-index: 101
 
 .main-nav
   &__list
@@ -60,7 +64,7 @@
         transform: scaleX(1)
         transform-origin: 0 0
     span
-      font-size: 10px
+      font-size: 12px
       line-height: 1.2
       display: inline-block
       position: relative

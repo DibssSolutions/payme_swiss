@@ -1,4 +1,6 @@
 import slick from 'slick-carousel';
+import { mediaWidth } from '../utils';
+import { WIN } from '../constants';
 
 $(document).ready(function() {
   /* MOBILE ONLY SLIDER ON MAIN PAGE */
@@ -13,39 +15,41 @@ $(document).ready(function() {
 
   var mobSlider = $('.js-mobile-slider');
 
-  /* Initialisation */
-  function mobileOnlySlider() {
-    $(mobSlider).slick({
-      variableWidth: true,
-      slidesToShow: 2,
-      slidesToScroll: 1,
-      mobileFirst: true,
-      arrows: false,
-      responsive: [
-        {
-          breakpoint: 768,
-          settings: 'unslick'
-        }
-      ]
-    });
-  }
+  const options = {
+    variableWidth: true,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    mobileFirst: true,
+    arrows: false
+  };
 
-  $(window).on('load resize orientationchange', function(e) {
+  const detectWindowWidth = () => {
+    const initSlider = $('.js-mobile-slider.slick-slider');
+    if (mediaWidth(768)) {
+      if (initSlider.length) return;
+      mobSlider.slick(options);
+    } else {
+      if (!initSlider.length) return;
+      mobSlider.slick('unslick');
+    }
+  };
+
+  detectWindowWidth();
+
+  let sliderMobTimeout;
+
+  WIN.resize(() => {
+    clearTimeout(sliderMobTimeout);
+    sliderMobTimeout = setTimeout(detectWindowWidth, 100);
+  });
+
+  WIN.on('load resize orientationchange', function(e) {
     clearTimeout(timeOut);
     timeOut = setTimeout(() => {
       for (let i = 0; i <= sliderIcons.length - 1; i++) {
         $(sliderIcons[i]).attr('xlink:href', `${arrayHref[i]}`);
       }
-    }, 100);
-
-    if (window.innerWidth < 768) {
-      if (!$(mobSlider).hasClass('slick-initialized')) {
-        mobileOnlySlider();
-      }
-    } else {
-      if ($(mobSlider).hasClass('slick-initialized')) {
-        $(mobSlider).removeClass('slick-initialized');
-      }
-    }
+    }, 120);
   });
+
 });

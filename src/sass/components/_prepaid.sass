@@ -89,7 +89,8 @@
   position: absolute
   left: 50%
   transform: translateX(-50%)
-  transition: transform 0.5s ease-in-out
+  transition: transform 0.8s ease-in-out
+  pointer-events: none
   @for $i from 1 through 4
     &:nth-child(#{$i})
       top: ($i - 1) * 32 + px
@@ -104,10 +105,11 @@
           transform: translate(-50%, -1 * (4 - $i) * 20 + px)
   &:last-child
     img
-      filter: drop-shadow(0 55px 15px rgba(0,0,0,.18))
+      max-width: 417px
+      +sm 
+        max-width: 291px
   img
     max-width: 343px
-    filter: drop-shadow(0 64px 10px rgba(0,0,0,.18))
     display: block
     +sm 
       max-width: 240px
