@@ -3,6 +3,7 @@
   text-align: center
   background-color: $white
   position: relative
+  backface-visibility: hidden
   &:after
     z-index: -1
     content: ''
@@ -11,6 +12,7 @@
     transition: transform 0.4s
     transform-origin: center
     box-shadow: 0 10px 24px -10px rgba($black, 0.09)
+    backface-visibility: hidden
   +hover
     &:after
       transform: scale(1.03)
