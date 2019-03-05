@@ -25,7 +25,7 @@
     transform-origin: center
     font-size: 0
     // opacity: 0
-    transition: transform 0.6s ease-out
+    // transition: transform 0.6s ease-out
     .is-animate &
       // opacity: 1
     &:nth-child(1)
@@ -33,25 +33,41 @@
       left: 0
       transform: translate(-7px, -10px)
       .is-animate &
-        transform: translate(0, 0)
+        animation: solutionsBtnTopLeftArrowAnimation ease-in-out 1.2s infinite alternate
     &:nth-child(2)
       top: 0
       right: 0
       transform: translate(7px, -10px) rotate(90deg)
       .is-animate &
-        transform: translate(0, 0) rotate(90deg)
+        animation: solutionsBtnTopRightArrowAnimation ease-in-out 1.2s infinite alternate
     &:nth-child(3)
       bottom: 0
       right: 0
       transform: translate(7px,17px) rotate(180deg)
       .is-animate &
-        transform: translate(0, 0) rotate(180deg)
+        animation: solutionsBtnBottomRightArrowAnimation ease-in-out 1.2s infinite alternate
     &:nth-child(4)
       bottom: 0
       left: 0
       transform: translate(-7px, 17px) rotate(-90deg)
       .is-animate &
-        transform: translate(0, 0) rotate(-90deg)
+        animation: solutionsBtnBottomLeftArrowAnimation ease-in-out 1.2s infinite alternate
     .icon
       font-size: 22px
       color: #e7e7e7
+
+@keyframes solutionsBtnTopLeftArrowAnimation
+  to
+    transform: translate(0, 0)
+
+@keyframes solutionsBtnTopRightArrowAnimation
+  to
+    transform: translate(0, 0) rotate(90deg)
+
+@keyframes solutionsBtnBottomRightArrowAnimation
+  to
+    transform: translate(0, 0) rotate(180deg)
+
+@keyframes solutionsBtnBottomLeftArrowAnimation
+  to
+    transform: translate(0, 0) rotate(-90deg)

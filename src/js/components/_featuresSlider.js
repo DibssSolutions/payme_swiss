@@ -17,10 +17,19 @@ $(document).ready(function() {
 
   const options = {
     variableWidth: true,
-    slidesToShow: 2,
+    slidesToShow: 1,
     slidesToScroll: 1,
     mobileFirst: true,
-    arrows: false
+    arrows: false,
+    infinite: false,
+    responsive: [
+      {
+        breakpoint: 540,
+        settings: {
+          slidesToShow: 2
+        }
+      }
+    ]
   };
 
   const detectWindowWidth = () => {
@@ -51,5 +60,4 @@ $(document).ready(function() {
       }
     }, 120);
   });
-
 });

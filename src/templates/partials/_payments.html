@@ -1,0 +1,21 @@
+<div class="payments">
+	<div class="payments__inner inner">
+		<div class="payments__wrapper wrapper">
+			<h3 class="payments__title title section-title">Tokenization – Apple Pay, Samsung Pay, Android pay enabled</h3>
+			<div class="text-block">Our philosophy is that the end-users shall be able to pay with anything they want to pay with. That is why we decided to enable our cards to be used also at Apple Pay, Samsung Pay and Android Pay</div>
+			<div class="payments__logos" data-scroll-trigger='150' data-anim-group data-delay-anim='0.1'>
+				{% for item in [
+					'Apple pay.png',
+					'Samsung pay.png',
+					'Android pay.png',
+					'Rosan pay.png',
+					'Garmin pay.png'
+				] %}
+					<div class="payments__logo" data-anim='from-bottom'>
+						<img src="./img/{{ item }}" alt="payment">
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
