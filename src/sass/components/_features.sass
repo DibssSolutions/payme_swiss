@@ -17,7 +17,9 @@
     &:after
       transform: scale(1.03)
   &__image
-    display: inline-block
+    display: inline-flex
+    justify-content: center
+    align-items: center
     +circle(90)
     position: relative
     margin-bottom: 8px
@@ -32,7 +34,6 @@
     &_red
       background-color: $red
     .icon
-      +vcenter
       font-size: 36px
       color: $white
   &__image-text
@@ -67,6 +68,7 @@
       +flex-size(50%)
       margin-bottom: 10px
     +sm 
+      +flex-size(100%)
       padding: 0 10px
       height: 100%
     .feature
