@@ -10,28 +10,33 @@
     display: flex
     justify-content: center
     align-items: flex-start
+    margin-left: -6px
     position: absolute
     top: -140px
     left: 0
     width: 100%
     animation: soar 3.5s ease-in-out infinite
     backface-visibility: hidden
+    +md 
+      margin-left: 6px
     +sm 
       top: -60px
+      margin-left: 0
   &__main-image
-    max-width: 440px
+    max-width: 540px
     +sm 
       max-width: 300px
       margin-right: -10px
   &__circle
-    margin-top: 78px
-    max-width: 113px
-    +sm 
+    max-width: 200px
+    +md
       display: none
     &_left
-      margin-right: 39px
+      margin-top: 38px
+      margin-right: -35px
     &_right
-      margin-left: 11px
+      margin-top: 32px
+      margin-left: -75px
   &__title
     margin-bottom: 19px
 
