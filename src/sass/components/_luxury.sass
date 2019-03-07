@@ -14,27 +14,26 @@
     top: -140px
     left: 0
     width: 100%
-    padding: 0 150px
     animation: soar 3.5s ease-in-out infinite
     backface-visibility: hidden
     +sm 
       top: -60px
   &__main-image
-    max-width: 525px
+    max-width: 440px
     +sm 
       max-width: 300px
       margin-right: -10px
   &__circle
     margin-top: 78px
-    margin-left: -31px
-    margin-right: -20px
-    max-width: 143px
+    max-width: 113px
     +sm 
       display: none
+    &_left
+      margin-right: 39px
+    &_right
+      margin-left: 11px
   &__title
     margin-bottom: 19px
-  // &__subtitle
-  //   margin-bottom: 10px
 
 @keyframes soar
   0%, 100% 

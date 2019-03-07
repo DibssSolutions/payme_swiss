@@ -25,8 +25,9 @@
   &__card-tabs
     &[data-tabs-wrapper]
       position: absolute
-      top: -50px
+      top: -132px
       left: 50%
+      min-height: 427px
       transform: translateX(-50%)
       width: 100%
       font-size: 0
@@ -39,11 +40,16 @@
     img
       max-width: 100%
       display: inline-block
-  &__card-tab[data-tabs-container].is-open
-    display: flex
-    justify-content: center
-    .prepaid__virtual-card:after
-      display: block
+  &__card-tab[data-tabs-container]
+    min-height: 427px
+    &.is-open
+      display: flex
+      justify-content: center
+      align-items: flex-start
+      
+      height: 100%
+      .prepaid__virtual-card:after
+        display: block
   &__title
     position: absolute
     top: 252px
@@ -55,19 +61,26 @@
     &.is-hidden
       display: none
   &__card
+    margin-top: 72px
     +sm
       margin-top: 30px
     img
+      max-width: 400px
+      max-height: 360px
       +sm
         max-width: 300px
   &__virtual-card
     position: relative
-    margin-top: -72px
+    // margin-top: auto
+    margin-top: 10px
+    // margin-top: -72px
     +sm
       margin-top: 15px
     img
+      max-width: 400px
+      max-height: 417px
       +sm
-        max-width: 200px 
+        max-width: 200px
     &:after
       display: none
       content: ''
