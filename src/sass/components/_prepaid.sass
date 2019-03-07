@@ -37,16 +37,18 @@
           top: 60px
       +sm
         top: -110px
+        min-height: initial
     img
       max-width: 100%
       display: inline-block
   &__card-tab[data-tabs-container]
     min-height: 427px
+    +sm 
+      min-height: initial
     &.is-open
       display: flex
       justify-content: center
       align-items: flex-start
-      
       height: 100%
       .prepaid__virtual-card:after
         display: block
