@@ -1,3 +1,9 @@
+{% set arrow = '
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="21" viewBox="0 0 22 21">
+    <path transform="rotate(45 3306.033 431.153)" d="M693 2463.501c-.016-.3-.123-.539-.266-.687l-9-9.504a1.006 1.006 0 0 0-1.414-.039c-.38.36-.398 1.034-.039 1.415l7.39 7.815H666a1 1 0 1 0 0 2h23.672l-7.39 7.816c-.36.381-.329 1.041.038 1.415.381.384 1.055.341 1.414-.04l9-9.503c.239-.242.25-.45.266-.688z"/>
+  </svg>
+' %}
+
 <div class="solutions">
   <div class="solutions__inner inner">
     <div class="solutions__wrapper">
@@ -9,10 +15,10 @@
       </div>
       <div class="solutions__btn" data-scroll-trigger='200'>
         <div class="solutions-cta">
-          <span class="solutions-cta__arrow">{{ mixins.icon('arrow') }}</span>
-          <span class="solutions-cta__arrow">{{ mixins.icon('arrow') }}</span>
-          <span class="solutions-cta__arrow">{{ mixins.icon('arrow') }}</span>
-          <span class="solutions-cta__arrow">{{ mixins.icon('arrow') }}</span>
+          <span class="solutions-cta__arrow">{{ arrow | safe }}</span>
+          <span class="solutions-cta__arrow">{{ arrow | safe }}</span>
+          <span class="solutions-cta__arrow">{{ arrow | safe }}</span>
+          <span class="solutions-cta__arrow">{{ arrow | safe }}</span>
           <img
             class="solutions-cta__img"
             src="./img/logo-2.svg"

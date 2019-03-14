@@ -85,7 +85,11 @@
         transform-origin: 100% 0
 
 .logo
-  +flex-center
+  display: inline-flex
+  font-size: 0
+  white-space: nowrap
+  &_big
+    // min-width: 195px
   &__text
     margin-left: 10px
     color: $mainTextColor
@@ -100,7 +104,6 @@
       font-size: 23px
       margin-left: 18px
   &__image
-    display: block
     max-width: 100%
     .logo_big &
       height: 35px

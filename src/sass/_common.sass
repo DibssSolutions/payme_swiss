@@ -5,15 +5,17 @@ html.is-overflow-hidden
     overflow: hidden
     height: 100vh
 
-
-body
-  position: relative
-  background: $light
+%mainText
   color: rgba($mainTextColor, 0.5)
   font-family: $montserrat
   font-size: 13px
   font-weight: 600
   line-height: 1.667
+
+body
+  position: relative
+  background: $light
+  @extend %mainText
   transition: opacity .2s ease-in-out, visibility .2s ease-in-out
   opacity: 0
   visibility: hidden
@@ -33,17 +35,17 @@ a
 .text-card,
 .image-card
   width: 100%
-  +flex-center
-  min-height: 391px
-  +md 
-    min-height: 350px
+  height: 391px
+  display: table
+  text-align: center
+  +md
+    height: 350px
 
 .text-card
   background-color: $white
-  text-align: center
   box-shadow: 0 22px 44px -11px rgba($black, 0.16)
   padding: 20px 70px
-  +md 
+  +md
     padding: 20px 35px
   +sm 
     min-height: inherit
@@ -51,11 +53,18 @@ a
     padding: 27px 35px 50px
   &__title
     margin-bottom: 10px
-  &__form
+  &__form,
+  &__inner
+    display: table-cell
+    vertical-align: middle
     padding-bottom: 10px
-    +sm 
+    text-align: center
+  &__form
+    +sm
       padding-top: 45px
       padding-bottom: 30px
+  &__content
+    @extend %mainText
 
 .image-card
   padding: 10px
@@ -64,14 +73,13 @@ a
   box-shadow: 0 12px 14px -10px rgba($black, 0.11)
   align-items: stretch
   +sm 
-    min-height: 210px
+    height: 170px
     box-shadow: 0 6px 7px -5px rgba($black, 0.11)
   &_logo
     background-image: $grad
     box-shadow: none
-    align-items: center
     +sm 
-      min-height: 165px
+      height: 160px
   &__text
     color: $white
     font-size: 32px
@@ -92,6 +100,10 @@ a
   &__image
     width: 100%
     +cover
+  &__content,
+  &__image
+    display: table-cell
+    vertical-align: middle
 
 .section-title
   margin-bottom: 10px
